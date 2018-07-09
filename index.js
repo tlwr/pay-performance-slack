@@ -4,7 +4,7 @@ const numeral = require('numeral')
 const CONNECTOR_URL = process.env.CONNECTOR_URL || 'https://localhost:9003'
 const CHANNEL       = process.env.CHANNEL       || '#pay-stats-test'
 
-process.env.SLACK_WEBHOOK_URI || console.error('SLACK_WEBHOOK_URI not set') || process.exit(1)
+process.env.SLACK_URI || console.error('SLACK_URI not set') || process.exit(1)
 
 function formatCurrency (pennies) {
   return '£' + numeral(pennies / 100.0).format('0,0.00')
@@ -101,7 +101,7 @@ Promise
 .then(message => {
   return request({
     method: 'POST',
-    url:    process.env.SLACK_WEBHOOK_URI,
+    url:    process.env.SLACK_URI,
     json:   message,
   })
 })
