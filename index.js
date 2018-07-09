@@ -42,7 +42,7 @@ function TotalPerformanceReport () {
 
 function ReportSeparator () {
   return {
-    text: new Array(8).fill(':chart:').join(' ')
+    text: new Array(10).fill(':chart:').join(' ')
   }
 }
 
