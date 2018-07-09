@@ -4,7 +4,15 @@ Puts pay card performance stats into slack
 
 # How to run
 
-## node local
+## Specifying the slack channel
+
+Use the `CHANNEL` environment variable, for example:
+
+```
+CHANNEL='#govuk-pay'
+```
+
+## Node local
 
 ```
 SLACK_WEBHOOK_URI='https://hooks.slack.com/services/:a/:b/:c' \
@@ -17,7 +25,7 @@ node index.js
 # NODE_TLS_REJECT_UNAUTHORIZED will stop TLS from verifying when running locally
 ```
 
-## docker local
+## Docker local
 
 ```
 docker build -t govukpay/performance-slack:local
