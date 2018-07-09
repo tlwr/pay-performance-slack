@@ -1,0 +1,10 @@
+{
+  "name": "pay-performance-slack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "numeral": "^2.0.6",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
