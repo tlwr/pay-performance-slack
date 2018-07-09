@@ -2,6 +2,7 @@ const request = require('request-promise-native')
 const numeral = require('numeral')
 
 const CONNECTOR_URL = process.env.CONNECTOR_URL || 'https://localhost:9003'
+const CHANNEL       = process.env.CHANNEL       || '#pay-stats-test'
 
 process.env.SLACK_WEBHOOK_URI || console.error('SLACK_WEBHOOK_URI not set') || process.exit(1)
 
@@ -79,7 +80,7 @@ function ThisDayLastYearPerformanceReport () {
 function SlackMessage (reports) {
   return {
     attachments: reports,
-    channel:     '#pay-stats-test',
+    channel:     CHANNEL,
     username:    'paybot',
     icon_emoji:  ':fine:',
     link_names:  1,
