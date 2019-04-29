@@ -1,4 +1,4 @@
-FROM govukpay/nodejs:8.11.3
+FROM govukpay/nodejs:alpine-3.8.1
 
 WORKDIR /app
 
@@ -9,4 +9,4 @@ RUN npm install
 
 ADD . /app
 
-CMD 'tail -f /dev/null'
+CMD ["node", "index.js"]
